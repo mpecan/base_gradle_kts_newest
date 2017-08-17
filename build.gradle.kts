@@ -42,14 +42,29 @@ repositories {
 
 
 dependencies {
+    /*
+    * Why do I need this anywho?
+    * */
+    val compile = "compile"
+    val testCompile = "testCompile"
+    val testRuntime = "testRuntime"
 
-    "compile"("org.springframework.boot:spring-boot-starter-web")
-    "compile"("org.springframework.boot:spring-boot-starter-data-jpa")
-    "compile"("com.h2database:h2")
-    "compile"("org.jetbrains.kotlin:kotlin-stdlib")
-    "compile"("org.jetbrains.kotlin:kotlin-reflect")
-    "compile"("org.springframework.boot:spring-boot-starter-test")
-    "testCompile"("com.fasterxml.jackson.module:jackson-module-kotlin")
+    compile("org.springframework.boot:spring-boot-starter-webflux")
+    compile("com.h2database:h2")
+    compile("org.jetbrains.kotlin:kotlin-stdlib")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
+    compile("org.springframework.boot:spring-boot-starter-test")
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
+
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.2")
+
+    testCompile("org.jetbrains.spek:spek-api:1.1.2")
+    testRuntime("org.jetbrains.spek:spek-junit-platform-engine:1.1.2")
+    testCompile("com.winterbe:expekt:0.5.0")
+    testCompile("org.junit.platform:junit-platform-launcher:1.0.0-M4")
+
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jdk8")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 
 }
 
